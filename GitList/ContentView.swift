@@ -46,7 +46,8 @@ class Observer : ObservableObject{
     
     func fetchItems() {
         // 1
-        AF.request("https://api.github.com/search/repositories?q=most+ranked")
+//        AF.request("https://api.github.com/search/repositories?q=most+ranked")
+        AF.request("https://api.github.com/search/repositories?q=stars:%3E1&sort=stars&per_page=30")
             .responseJSON{
                             response in
                 switch response.result {
